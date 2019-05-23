@@ -1,0 +1,196 @@
+{
+    "uid": "张利霞0930",
+    "should": 3,
+    "messages": [
+        {
+            "cid": {
+                "appkey": "cntaobao",
+                "display": "张利霞0930",
+                "nick": "张利霞0930",
+                "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+                "status": -1,
+                "unreadnum": 0
+            },
+            "extinfo": {
+                "autochatmsg": 0,
+                "fixmsgread": 0,
+                "others": {
+                    "clientId": "cntaobaoqq812836410_1550844428151_70605",
+                    "enter_shop_info": "{\"itemId\":564620896595,\"dispatchedNick\":\"cntaobaoqq812836410:小萌\",\"fbtExtParams\":\"ori_seller_id-818972668,itemId-564620896595\",\"expired\":86400,\"pageSource\":\"GOODS_DETAIL\",\"shopId\":162971866}",
+                    "msg_feature": "1",
+                    "nickname": "{\"user\":{\"cntaobaoqq812836410:小萌\":\"qq812836410:小萌\",\"cntaobao张利霞0930\":\"张利霞0930\"},\"tribe\":{}}",
+                    "realFromId": "cntaobao张利霞0930",
+                    "realToId": "cntaobaoqq812836410:小萌"
+                },
+                "syschatmsg": 0
+            },
+            "fromid": {
+                "appkey": "cntaobao",
+                "display": "张利霞0930",
+                "nick": "张利霞0930",
+                "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+                "status": -1,
+                "unreadnum": 0
+            },
+            "msgbody": "[{\"type\":0,\"value\":\"https://item.taobao.com/item.htm?id=564620896595\",\"jvale\":\"{\\\"SAFE_URLFLAGS\\\":{\\\"https://item.taobao.com/item.htm?id=564620896595\\\":{\\\"SAFE_FLAG\\\":1}}}\"}]",
+            "msgid": "6269112317440294914",
+            "msgstatus": 0,
+            "msgtime": "1550844429591",
+            "msgtype": 0,
+            "readflag": 1,
+            "svrtime": "1550844429591",
+            "toid": {
+                "appkey": "cntaobao",
+                "display": "qq812836410:小萌",
+                "nick": "qq812836410:小萌",
+                "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+                "status": -1,
+                "unreadnum": 0
+            }
+        },
+        {
+            "cid": {
+                "appkey": "cntaobao",
+                "display": "张利霞0930",
+                "nick": "张利霞0930",
+                "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+                "status": -1,
+                "unreadnum": 0
+            },
+            "extinfo": {
+                "autochatmsg": 1,
+                "fixmsgread": 0,
+                "others": {
+                    "card_code": "normal_text_rtf",
+                    "card_source": "2",
+                    "msg_feature": "3",
+                    "nickname": "{\"user\":{\"cntaobaoqq812836410:小萌\":\"qq812836410:小萌\",\"cntaobao张利霞0930\":\"张利霞0930\"},\"tribe\":{}}",
+                    "partner_bizid": "normal_text_rtf",
+                    "realFromId": "cntaobaoqq812836410:小萌",
+                    "realToId": "cntaobao张利霞0930"
+                },
+                "syschatmsg": 0
+            },
+            "fromid": {
+                "appkey": "cntaobao",
+                "display": "qq812836410:小萌",
+                "nick": "qq812836410:小萌",
+                "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+                "status": -1,
+                "unreadnum": 0
+            },
+            "msgbody": "[{\"type\":0,\"value\":\"长得那么美丽的您，总觉得缺少点啥\",\"jvale\":\"{\\\"FONT_COLOR\\\":16711808,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":8,\\\"SAFE_URLFLAGS\\\":{}}\"},{\"type\":1,\"value\":\"pic:imemotion|ID?filepath=C%3A%5CProgram%20Files%20(x86)%5CAliWorkbench%5C7.02.06N%5CIMSDKResource%5Cemotions%5C28.gif&shortcut=%2F%3A801\",\"jvale\":\"{\\\"FONT_COLOR\\\":16711808,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":8,\\\"SAFE_URLFLAGS\\\":{}}\"},{\"type\":0,\"value\":\"终于发现是少了一套【\",\"jvale\":\"{\\\"FONT_COLOR\\\":16711808,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":8,\\\"SAFE_URLFLAGS\\\":{}}\"},{\"type\":0,\"value\":\"小萌萌\",\"jvale\":\"{\\\"FONT_COLOR\\\":16711680,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":8,\\\"SAFE_URLFLAGS\\\":{}}\"},{\"type\":0,\"value\":\"】家美美哒的睡衣~您好！欢迎来到【小萌萌家睡衣】嘻嘻~\",\"jvale\":\"{\\\"FONT_COLOR\\\":16711808,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":8,\\\"SAFE_URLFLAGS\\\":{}}\"}]",
+            "msgid": "5980881941288548589",
+            "msgstatus": 1,
+            "msgtime": "1550844429729",
+            "msgtype": 13,
+            "readflag": 1,
+            "svrtime": "1550844429729",
+            "toid": {
+                "appkey": "cntaobao",
+                "display": "张利霞0930",
+                "nick": "张利霞0930",
+                "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+                "status": -1,
+                "unreadnum": 0
+            }
+        },
+        {
+            "cid": {
+                "appkey": "cntaobao",
+                "display": "张利霞0930",
+                "nick": "张利霞0930",
+                "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+                "status": -1,
+                "unreadnum": 0
+            },
+            "extinfo": {
+                "autochatmsg": 1,
+                "fixmsgread": 0,
+                "others": {
+                    "card_code": "entry_into_store",
+                    "card_source": "2",
+                    "disable_version_controller": "true",
+                    "last_recent": "0",
+                    "msg_feature": "59",
+                    "nickname": "{\"user\":{\"cntaobaoqq812836410:小萌\":\"qq812836410:小萌\",\"cntaobao张利霞0930\":\"张利霞0930\"},\"tribe\":{}}",
+                    "partner_bizid": "entry_into_store",
+                    "realFromId": "cntaobao张利霞0930",
+                    "realToId": "cntaobaoqq812836410:小萌",
+                    "show_type": "0",
+                    "silent": "1",
+                    "unknown_msg": "{\"behavior\":\"DEGRADE_DISP\",\"degradeMessage\":\"\"}"
+                },
+                "syschatmsg": 0
+            },
+            "fromid": {
+                "appkey": "cntaobao",
+                "display": "张利霞0930",
+                "nick": "张利霞0930",
+                "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+                "status": -1,
+                "unreadnum": 0
+            },
+            "msgbody": "[{\"type\":65,\"value\":\"{\\\"header\\\":{\\\"degrade\\\":{\\\"alternative\\\":\\\"目前版本不支持该功能，请升级版本\\\"},\\\"summary\\\":\\\"进店卡片\\\",\\\"title\\\":\\\"进店卡片\\\"},\\\"template\\\":{\\\"data\\\":{\\\"body\\\":{\\\"bc\\\":\\\"#FFFFFF\\\",\\\"cs\\\":\\\"box\\\",\\\"ds\\\":\\\"fix\\\",\\\"f\\\":[0,0,12,4.7489999999999997],\\\"sv\\\":[{\\\"cs\\\":\\\"img\\\",\\\"f\\\":[0,0,12,4.7489999999999997],\\\"rds\\\":0.13,\\\"url\\\":\\\"https://gw.alicdn.com/tps/TB17Sm8PXXXXXcNXpXXXXXXXXXX-564-789.png\\\"},{\\\"ac\\\":[\\\"https://item.taobao.com/item.htm?id=564620896595&scm=20140619.rec.818972668.564620896595\\\"],\\\"bc\\\":\\\"#ffffff\\\",\\\"cs\\\":\\\"box\\\",\\\"ds\\\":\\\"flex\\\",\\\"f\\\":[0,0,12,4.6820000000000004],\\\"fd\\\":\\\"column\\\",\\\"rds\\\":0.13,\\\"sv\\\":[{\\\"cs\\\":\\\"lbl\\\",\\\"f\\\":[0.48599999999999999,0,11,1.4910000000000001],\\\"mts\\\":\\\"m\\\",\\\"tc\\\":\\\"#666666\\\",\\\"text\\\":\\\"当前用户来自 淘宝移动端 宝贝详情页 \\\",\\\"tfs\\\":0.48599999999999999},{\\\"cs\\\":\\\"line\\\",\\\"lc\\\":\\\"#ebebeb\\\",\\\"ls\\\":\\\"stock\\\",\\\"v\\\":[[0,0],[12,0]]},{\\\"cs\\\":\\\"box\\\",\\\"ds\\\":\\\"fix\\\",\\\"f\\\":[0.58999999999999997,0.52000000000000002,10.92,2.6709999999999998],\\\"sv\\\":[{\\\"cs\\\":\\\"img\\\",\\\"f\\\":[0,0,2.081,2.081],\\\"ir\\\":\\\"al\\\",\\\"rds\\\":0.13,\\\"url\\\":\\\"https://img.alicdn.com/bao/uploaded/i8/TB1jcaSnQfb_uJjSsrbYXH6bVXa_M2.SS2\\\"},{\\\"bc\\\":\\\"#00FFFFFF\\\",\\\"cs\\\":\\\"box\\\",\\\"ds\\\":\\\"flex\\\",\\\"f\\\":[2.4620000000000002,0,8.4499999999999993,2.081],\\\"sv\\\":[{\\\"cs\\\":\\\"lbl\\\",\\\"f\\\":[0,0,8.4499999999999993,\\\"FIT\\\"],\\\"mts\\\":\\\"m\\\",\\\"tc\\\":\\\"#333333\\\",\\\"text\\\":\\\"日式和服公主风睡衣女春秋季纯棉长袖甜美可爱清新冬季家居服套装\\\",\\\"tfs\\\":0.48599999999999999},{\\\"cs\\\":\\\"lbl\\\",\\\"f\\\":[0,0,8.2460000000000004,1.1499999999999999],\\\"mts\\\":\\\"m\\\",\\\"tc\\\":\\\"#666666\\\",\\\"text\\\":\\\"合计￥49.00\\\",\\\"tfs\\\":0.48599999999999999}]}]}]}]},\\\"layout\\\":\\\"center\\\"},\\\"id\\\":20014}}\",\"jvale\":\"\"}]",
+            "msgid": "5980881941288539053",
+            "msgstatus": 0,
+            "msgtime": "1550844429734",
+            "msgtype": 65536,
+            "readflag": 1,
+            "svrtime": "1550844429734",
+            "toid": {
+                "appkey": "cntaobao",
+                "display": "qq812836410:小萌",
+                "nick": "qq812836410:小萌",
+                "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+                "status": -1,
+                "unreadnum": 0
+            }
+        },
+        {
+            "cid": {
+                "appkey": "cntaobao",
+                "display": "张利霞0930",
+                "nick": "张利霞0930",
+                "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+                "status": -1,
+                "unreadnum": 0
+            },
+            "extinfo": {
+                "autochatmsg": 0,
+                "fixmsgread": 0,
+                "others": {
+                    "clientId": "cntaobaoqq812836410_1550844451861_30925",
+                    "msg_feature": "1",
+                    "nickname": "{\"user\":{\"cntaobaoqq812836410:小萌\":\"qq812836410:小萌\",\"cntaobao张利霞0930\":\"张利霞0930\"},\"tribe\":{}}",
+                    "realFromId": "cntaobao张利霞0930",
+                    "realToId": "cntaobaoqq812836410:小萌"
+                },
+                "syschatmsg": 0
+            },
+            "fromid": {
+                "appkey": "cntaobao",
+                "display": "张利霞0930",
+                "nick": "张利霞0930",
+                "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+                "status": -1,
+                "unreadnum": 0
+            },
+            "msgbody": "[{\"type\":0,\"value\":\"你好身高160体重120穿什么码合适\",\"jvale\":\"{\\\"SAFE_URLFLAGS\\\":{}}\"}]",
+            "msgid": "6269112317441802243",
+            "msgstatus": 0,
+            "msgtime": "1550844453278",
+            "msgtype": 0,
+            "readflag": 1,
+            "svrtime": "1550844453278",
+            "toid": {
+                "appkey": "cntaobao",
+                "display": "qq812836410:小萌",
+                "nick": "qq812836410:小萌",
+                "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+                "status": -1,
+                "unreadnum": 0
+            }
+        }
+    ]
+}

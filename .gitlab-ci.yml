@@ -1,0 +1,22 @@
+stages:
+  - test
+  - build
+
+.basic: &basic
+  tags:
+    - windows
+  before_script:
+    - chcp 850
+
+test:
+  <<: *basic
+  stage: test
+  script:
+    - echo "it's ok... trust me"
+
+build:
+  <<: *basic
+  stage: build
+  script:
+    - call yarn install
+    - call npm run package

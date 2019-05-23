@@ -1,0 +1,193 @@
+{
+  "uid": "颖火虫8888875048422",
+  "messages": [
+    {
+      "cid": {
+        "appkey": "cntaobao",
+        "display": "颖火虫8888875048422",
+        "nick": "颖火虫8888875048422",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "extinfo": {
+        "autochatmsg": 0,
+        "fixmsgread": 1,
+        "others": {
+          "enter_shop_info": "{\"itemId\":583915196503,\"dispatchedNick\":\"cntaobaowodebaobao17111:珈蓝\",\"fbtExtParams\":\"ori_seller_id-278238551,itemId-583915196503\",\"expired\":86400,\"pageSource\":\"GOODS_DETAIL\",\"shopId\":58889225}",
+          "msg_feature": "0",
+          "nickname": "{\"user\":{\"cntaobaowodebaobao17111:珈蓝\":\"wodebaobao17111:珈蓝\",\"cntaobao颖火虫8888875048422\":\"颖火虫8888875048422\"},\"tribe\":{}}",
+          "realFromId": "cntaobao颖火虫8888875048422",
+          "realToId": "cntaobaowodebaobao17111:珈蓝"
+        },
+        "syschatmsg": 0
+      },
+      "fromid": {
+        "appkey": "cntaobao",
+        "display": "颖火虫8888875048422",
+        "nick": "颖火虫8888875048422",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "msgbody": "[{\"type\":0,\"value\":\"https://item.taobao.com/item.htm?id=583915196503\",\"jvale\":\"{\\\"SAFE_URLFLAGS\\\":{\\\"https://item.taobao.com/item.htm?id=583915196503\\\":{\\\"SAFE_FLAG\\\":1}}}\"}]",
+      "msgid": "6269112305037912640",
+      "msgstatus": 0,
+      "msgtime": "1550655184471",
+      "msgtype": 0,
+      "readflag": 1,
+      "svrtime": "1550655184471",
+      "toid": {
+        "appkey": "cntaobao",
+        "display": "wodebaobao17111:珈蓝",
+        "nick": "wodebaobao17111:珈蓝",
+        "portrait": "pic:impicture|?filepath=D%3A%5CAliWorkbenchData%5CSystem%5Ccust_portrait_new%5Caf%5Ccntaobaowodebaobao17111%3D%E7%8F%88%E8%93%9D_raw",
+        "status": -1,
+        "unreadnum": 0
+      }
+    },
+    {
+      "cid": {
+        "appkey": "cntaobao",
+        "display": "颖火虫8888875048422",
+        "nick": "颖火虫8888875048422",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "extinfo": {
+        "autochatmsg": 1,
+        "fixmsgread": 0,
+        "others": {
+          "card_code": "normal_text_rtf",
+          "card_source": "2",
+          "msg_feature": "3",
+          "nickname": "{\"user\":{\"cntaobaowodebaobao17111:珈蓝\":\"wodebaobao17111:珈蓝\",\"cntaobao颖火虫8888875048422\":\"颖火虫8888875048422\"},\"tribe\":{}}",
+          "partner_bizid": "normal_text_rtf",
+          "realFromId": "cntaobaowodebaobao17111:珈蓝",
+          "realToId": "cntaobao颖火虫8888875048422"
+        },
+        "syschatmsg": 0
+      },
+      "fromid": {
+        "appkey": "cntaobao",
+        "display": "wodebaobao17111:珈蓝",
+        "nick": "wodebaobao17111:珈蓝",
+        "portrait": "pic:impicture|?filepath=D%3A%5CAliWorkbenchData%5CSystem%5Ccust_portrait_new%5Caf%5Ccntaobaowodebaobao17111%3D%E7%8F%88%E8%93%9D_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "msgbody": "[{\"type\":0,\"value\":\"小仙女~欢迎光临天彩翼飞，很高兴为您服务~ 我是客服珈蓝~\",\"jvale\":\"{\\\"FONT_BOLD_STYLE\\\":1,\\\"FONT_COLOR\\\":16711808,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":14,\\\"SAFE_URLFLAGS\\\":{}}\"},{\"type\":1,\"value\":\"pic:imemotion|ID?filepath=C%3A%5CProgram%20Files%20(x86)%5CAliWorkbench%5C7.02.06N%5CIMSDKResource%5Cemotions%5C84.gif&shortcut=%2F%3A-F\",\"jvale\":\"{\\\"FONT_BOLD_STYLE\\\":1,\\\"FONT_COLOR\\\":16711808,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":14,\\\"SAFE_URLFLAGS\\\":{}}\"},{\"type\":0,\"value\":\"有什么问题尽管抛来噢~\",\"jvale\":\"{\\\"FONT_BOLD_STYLE\\\":1,\\\"FONT_COLOR\\\":16711808,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":14,\\\"SAFE_URLFLAGS\\\":{}}\"},{\"type\":1,\"value\":\"pic:imemotion|ID?filepath=C%3A%5CProgram%20Files%20(x86)%5CAliWorkbench%5C7.02.06N%5CIMSDKResource%5Cemotions%5C86.gif&shortcut=%2F%3AY\",\"jvale\":\"{\\\"FONT_BOLD_STYLE\\\":1,\\\"FONT_COLOR\\\":16711808,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":14,\\\"SAFE_URLFLAGS\\\":{}}\"}]",
+      "msgid": "5980881928886181117",
+      "msgstatus": 1,
+      "msgtime": "1550655184751",
+      "msgtype": 13,
+      "readflag": 0,
+      "svrtime": "1550655184751",
+      "toid": {
+        "appkey": "cntaobao",
+        "display": "颖火虫8888875048422",
+        "nick": "颖火虫8888875048422",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      }
+    },
+    {
+      "cid": {
+        "appkey": "cntaobao",
+        "display": "颖火虫8888875048422",
+        "nick": "颖火虫8888875048422",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "extinfo": {
+        "autochatmsg": 1,
+        "fixmsgread": 0,
+        "others": {
+          "card_code": "entry_into_store",
+          "card_source": "2",
+          "disable_version_controller": "true",
+          "last_recent": "0",
+          "msg_feature": "59",
+          "nickname": "{\"user\":{\"cntaobaowodebaobao17111:珈蓝\":\"wodebaobao17111:珈蓝\",\"cntaobao颖火虫8888875048422\":\"颖火虫8888875048422\"},\"tribe\":{}}",
+          "partner_bizid": "entry_into_store",
+          "realFromId": "cntaobao颖火虫8888875048422",
+          "realToId": "cntaobaowodebaobao17111:珈蓝",
+          "show_type": "0",
+          "silent": "1",
+          "unknown_msg": "{\"behavior\":\"DEGRADE_DISP\",\"degradeMessage\":\"\"}"
+        },
+        "syschatmsg": 0
+      },
+      "fromid": {
+        "appkey": "cntaobao",
+        "display": "颖火虫8888875048422",
+        "nick": "颖火虫8888875048422",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "msgbody": "[{\"type\":65,\"value\":\"{\\\"header\\\":{\\\"degrade\\\":{\\\"alternative\\\":\\\"目前版本不支持该功能，请升级版本\\\"},\\\"summary\\\":\\\"进店卡片\\\",\\\"title\\\":\\\"进店卡片\\\"},\\\"template\\\":{\\\"data\\\":{\\\"body\\\":{\\\"bc\\\":\\\"#FFFFFF\\\",\\\"cs\\\":\\\"box\\\",\\\"ds\\\":\\\"fix\\\",\\\"f\\\":[0,0,12,4.7489999999999997],\\\"sv\\\":[{\\\"cs\\\":\\\"img\\\",\\\"f\\\":[0,0,12,4.7489999999999997],\\\"rds\\\":0.13,\\\"url\\\":\\\"https://gw.alicdn.com/tps/TB17Sm8PXXXXXcNXpXXXXXXXXXX-564-789.png\\\"},{\\\"ac\\\":[\\\"https://item.taobao.com/item.htm?id=583915196503&scm=20140619.rec.278238551.583915196503\\\"],\\\"bc\\\":\\\"#ffffff\\\",\\\"cs\\\":\\\"box\\\",\\\"ds\\\":\\\"flex\\\",\\\"f\\\":[0,0,12,4.6820000000000004],\\\"fd\\\":\\\"column\\\",\\\"rds\\\":0.13,\\\"sv\\\":[{\\\"cs\\\":\\\"lbl\\\",\\\"f\\\":[0.48599999999999999,0,11,1.4910000000000001],\\\"mts\\\":\\\"m\\\",\\\"tc\\\":\\\"#666666\\\",\\\"text\\\":\\\"当前用户来自 淘宝移动端 宝贝详情页 \\\",\\\"tfs\\\":0.48599999999999999},{\\\"cs\\\":\\\"line\\\",\\\"lc\\\":\\\"#ebebeb\\\",\\\"ls\\\":\\\"stock\\\",\\\"v\\\":[[0,0],[12,0]]},{\\\"cs\\\":\\\"box\\\",\\\"ds\\\":\\\"fix\\\",\\\"f\\\":[0.58999999999999997,0.52000000000000002,10.92,2.6709999999999998],\\\"sv\\\":[{\\\"cs\\\":\\\"img\\\",\\\"f\\\":[0,0,2.081,2.081],\\\"ir\\\":\\\"al\\\",\\\"rds\\\":0.13,\\\"url\\\":\\\"https://img.alicdn.com/bao/uploaded/i1/278238551/O1CN01gtQLbT2D2PFRqcMbN_!!278238551.jpg\\\"},{\\\"bc\\\":\\\"#00FFFFFF\\\",\\\"cs\\\":\\\"box\\\",\\\"ds\\\":\\\"flex\\\",\\\"f\\\":[2.4620000000000002,0,8.4499999999999993,2.081],\\\"sv\\\":[{\\\"cs\\\":\\\"lbl\\\",\\\"f\\\":[0,0,8.4499999999999993,\\\"FIT\\\"],\\\"mts\\\":\\\"m\\\",\\\"tc\\\":\\\"#333333\\\",\\\"text\\\":\\\"包包女2018冬季新款菱格链条流浪包韩版百搭网红斜挎包时尚小黑包\\\",\\\"tfs\\\":0.48599999999999999},{\\\"cs\\\":\\\"lbl\\\",\\\"f\\\":[0,0,8.2460000000000004,1.1499999999999999],\\\"mts\\\":\\\"m\\\",\\\"tc\\\":\\\"#666666\\\",\\\"text\\\":\\\"合计￥49.90\\\",\\\"tfs\\\":0.48599999999999999}]}]}]}]},\\\"layout\\\":\\\"center\\\"},\\\"id\\\":20014}}\",\"jvale\":\"\"}]",
+      "msgid": "5980881928886217621",
+      "msgstatus": 0,
+      "msgtime": "1550655184758",
+      "msgtype": 65536,
+      "readflag": 1,
+      "svrtime": "1550655184758",
+      "toid": {
+        "appkey": "cntaobao",
+        "display": "wodebaobao17111:珈蓝",
+        "nick": "wodebaobao17111:珈蓝",
+        "portrait": "pic:impicture|?filepath=D%3A%5CAliWorkbenchData%5CSystem%5Ccust_portrait_new%5Caf%5Ccntaobaowodebaobao17111%3D%E7%8F%88%E8%93%9D_raw",
+        "status": -1,
+        "unreadnum": 0
+      }
+    },
+    {
+      "cid": {
+        "appkey": "cntaobao",
+        "display": "颖火虫8888875048422",
+        "nick": "颖火虫8888875048422",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "extinfo": {
+        "autochatmsg": 0,
+        "fixmsgread": 1,
+        "others": {
+          "msg_feature": "0",
+          "nickname": "{\"user\":{\"cntaobaowodebaobao17111:珈蓝\":\"wodebaobao17111:珈蓝\",\"cntaobao颖火虫8888875048422\":\"颖火虫8888875048422\"},\"tribe\":{}}",
+          "realFromId": "cntaobao颖火虫8888875048422",
+          "realToId": "cntaobaowodebaobao17111:珈蓝"
+        },
+        "syschatmsg": 0
+      },
+      "fromid": {
+        "appkey": "cntaobao",
+        "display": "颖火虫8888875048422",
+        "nick": "颖火虫8888875048422",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "msgbody": "[{\"type\":0,\"value\":\"什么时候发货\",\"jvale\":\"{\\\"SAFE_URLFLAGS\\\":{}}\"}]",
+      "msgid": "6269112305038371393",
+      "msgstatus": 0,
+      "msgtime": "1550655191283",
+      "msgtype": 0,
+      "readflag": 1,
+      "svrtime": "1550655191283",
+      "toid": {
+        "appkey": "cntaobao",
+        "display": "wodebaobao17111:珈蓝",
+        "nick": "wodebaobao17111:珈蓝",
+        "portrait": "pic:impicture|?filepath=D%3A%5CAliWorkbenchData%5CSystem%5Ccust_portrait_new%5Caf%5Ccntaobaowodebaobao17111%3D%E7%8F%88%E8%93%9D_raw",
+        "status": -1,
+        "unreadnum": 0
+      }
+    }
+  ]
+}

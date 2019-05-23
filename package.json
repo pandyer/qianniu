@@ -1,0 +1,45 @@
+{
+  "name": "filet",
+  "version": "1.8.11",
+  "description": "filet",
+  "main": "out/index.js",
+  "repository": "https://git.leyantech.com/pc-client/filet.git",
+  "author": "Wei Shi <shiwei@leyantech.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "eslint": "eslint --ext .js out"
+  },
+  "jest": {},
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "@sentry/electron": "^0.16.0",
+    "axios": "^0.18.0",
+    "dayjs": "^1.7.7",
+    "devtron": "^1.4.0",
+    "electron": "^5.0.1",
+    "electron-is-dev": "^1.0.1",
+    "electron-store": "^2.0.0",
+    "electron-updater": "^4.0.6",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "ly-ntr": "^0.1.1",
+    "ly-win-tools": "^0.1.0",
+    "node-netstat": "^1.5.0",
+    "qnipc": "^0.0.6",
+    "socket.io": "^2.1.1",
+    "tcp-port-used": "^1.0.1",
+    "uuid": "^3.3.2",
+    "winston": "^3.1.0",
+    "ws": "^6.1.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0"
+  }
+}

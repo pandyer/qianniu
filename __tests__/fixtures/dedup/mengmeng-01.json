@@ -1,0 +1,98 @@
+{
+  "uid": "earnmoney6002",
+  "messages": [
+    {
+      "cid": {
+        "appkey": "cntaobao",
+        "display": "earnmoney6002",
+        "nick": "earnmoney6002",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "extinfo": {
+        "autochatmsg": 0,
+        "fixmsgread": 0,
+        "others": {
+          "clientId": "cntaobaoqq812836410_1550665156649_23800",
+          "enter_shop_info": "{\"itemId\":587393619350,\"dispatchedNick\":\"cntaobaoqq812836410:小萌\",\"fbtExtParams\":\"ori_seller_id-818972668,itemId-587393619350\",\"expired\":86400,\"pageSource\":\"GOODS_DETAIL\",\"shopId\":162971866}",
+          "msg_feature": "1",
+          "nickname": "{\"user\":{\"cntaobaoearnmoney6002\":\"earnmoney6002\",\"cntaobaoqq812836410:小萌\":\"qq812836410:小萌\"},\"tribe\":{}}",
+          "realFromId": "cntaobaoearnmoney6002",
+          "realToId": "cntaobaoqq812836410:小萌"
+        },
+        "syschatmsg": 0
+      },
+      "fromid": {
+        "appkey": "cntaobao",
+        "display": "earnmoney6002",
+        "nick": "earnmoney6002",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "msgbody": "[{\"type\":0,\"value\":\"https://item.taobao.com/item.htm?id=587393619350\",\"jvale\":\"{\\\"SAFE_URLFLAGS\\\":{\\\"https://item.taobao.com/item.htm?id=587393619350\\\":{\\\"SAFE_FLAG\\\":1}}}\"}]",
+      "msgid": "6269112305691394048",
+      "msgstatus": 0,
+      "msgtime": "1550665156722",
+      "msgtype": 0,
+      "readflag": 1,
+      "svrtime": "1550665156722",
+      "toid": {
+        "appkey": "cntaobao",
+        "display": "qq812836410:小萌",
+        "nick": "qq812836410:小萌",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      }
+    },
+    {
+      "cid": {
+        "appkey": "cntaobao",
+        "display": "earnmoney6002",
+        "nick": "earnmoney6002",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "extinfo": {
+        "autochatmsg": 1,
+        "fixmsgread": 0,
+        "others": {
+          "card_code": "normal_text_rtf",
+          "card_source": "2",
+          "msg_feature": "3",
+          "nickname": "{\"user\":{\"cntaobaoearnmoney6002\":\"earnmoney6002\",\"cntaobaoqq812836410:小萌\":\"qq812836410:小萌\"},\"tribe\":{}}",
+          "partner_bizid": "normal_text_rtf",
+          "realFromId": "cntaobaoqq812836410:小萌",
+          "realToId": "cntaobaoearnmoney6002"
+        },
+        "syschatmsg": 0
+      },
+      "fromid": {
+        "appkey": "cntaobao",
+        "display": "qq812836410:小萌",
+        "nick": "qq812836410:小萌",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "msgbody": "[{\"type\":0,\"value\":\"长得那么美丽的您，总觉得缺少点啥\",\"jvale\":\"{\\\"FONT_COLOR\\\":16711808,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":8,\\\"SAFE_URLFLAGS\\\":{}}\"},{\"type\":1,\"value\":\"pic:imemotion|ID?filepath=C%3A%5CProgram%20Files%20(x86)%5CAliWorkbench%5C7.02.51N%5CIMSDKResource%5Cemotions%5C28.gif&shortcut=%2F%3A801\",\"jvale\":\"{\\\"FONT_COLOR\\\":16711808,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":8,\\\"SAFE_URLFLAGS\\\":{}}\"},{\"type\":0,\"value\":\"终于发现是少了一套【\",\"jvale\":\"{\\\"FONT_COLOR\\\":16711808,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":8,\\\"SAFE_URLFLAGS\\\":{}}\"},{\"type\":0,\"value\":\"小萌萌\",\"jvale\":\"{\\\"FONT_COLOR\\\":16711680,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":8,\\\"SAFE_URLFLAGS\\\":{}}\"},{\"type\":0,\"value\":\"】家美美哒的睡衣~您好！欢迎来到【小萌萌家睡衣】嘻嘻~\",\"jvale\":\"{\\\"FONT_COLOR\\\":16711808,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":8,\\\"SAFE_URLFLAGS\\\":{}}\"}]",
+      "msgid": "5980881929539784740",
+      "msgstatus": 1,
+      "msgtime": "1550665157097",
+      "msgtype": 13,
+      "readflag": 0,
+      "svrtime": "1550665157097",
+      "toid": {
+        "appkey": "cntaobao",
+        "display": "earnmoney6002",
+        "nick": "earnmoney6002",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      }
+    }
+  ]
+}

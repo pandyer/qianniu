@@ -1,0 +1,193 @@
+{
+  "uid": "森林迷了小鹿1314",
+  "messages": [
+    {
+      "cid": {
+        "appkey": "cntaobao",
+        "display": "森林迷了小鹿1314",
+        "nick": "森林迷了小鹿1314",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "extinfo": {
+        "autochatmsg": 0,
+        "fixmsgread": 0,
+        "others": {
+          "clientId": "cntaobaosemk旗舰店_1550658372238_92619",
+          "enter_shop_info": "{\"itemId\":523774561837,\"dispatchedNick\":\"cntaobaosemk旗舰店:波罗\",\"fbtExtParams\":\"ori_seller_id-677812813,itemId-523774561837\",\"expired\":86400,\"pageSource\":\"GOODS_DETAIL\",\"shopId\":65290690}",
+          "msg_feature": "1",
+          "nickname": "{\"user\":{\"cntaobaosemk旗舰店:波罗\":\"semk旗舰店:波罗\",\"cntaobao森林迷了小鹿1314\":\"森林迷了小鹿1314\"},\"tribe\":{}}",
+          "realFromId": "cntaobao森林迷了小鹿1314",
+          "realToId": "cntaobaosemk旗舰店:波罗"
+        },
+        "syschatmsg": 0
+      },
+      "fromid": {
+        "appkey": "cntaobao",
+        "display": "森林迷了小鹿1314",
+        "nick": "森林迷了小鹿1314",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "msgbody": "[{\"type\":0,\"value\":\"您好，改下地址\",\"jvale\":\"{\\\"SAFE_URLFLAGS\\\":{}}\"}]",
+      "msgid": "6269112305246863360",
+      "msgstatus": 0,
+      "msgtime": "1550658373040",
+      "msgtype": 0,
+      "readflag": 1,
+      "svrtime": "1550658373040",
+      "toid": {
+        "appkey": "cntaobao",
+        "display": "semk旗舰店:波罗",
+        "nick": "semk旗舰店:波罗",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      }
+    },
+    {
+      "cid": {
+        "appkey": "cntaobao",
+        "display": "森林迷了小鹿1314",
+        "nick": "森林迷了小鹿1314",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "extinfo": {
+        "autochatmsg": 1,
+        "fixmsgread": 0,
+        "others": {
+          "card_code": "normal_text_rtf",
+          "card_source": "2",
+          "msg_feature": "3",
+          "nickname": "{\"user\":{\"cntaobaosemk旗舰店:波罗\":\"semk旗舰店:波罗\",\"cntaobao森林迷了小鹿1314\":\"森林迷了小鹿1314\"},\"tribe\":{}}",
+          "partner_bizid": "normal_text_rtf",
+          "realFromId": "cntaobaosemk旗舰店:波罗",
+          "realToId": "cntaobao森林迷了小鹿1314"
+        },
+        "syschatmsg": 0
+      },
+      "fromid": {
+        "appkey": "cntaobao",
+        "display": "semk旗舰店:波罗",
+        "nick": "semk旗舰店:波罗",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "msgbody": "[{\"type\":0,\"value\":\"亲亲 欢迎光临semk旗舰店呢~菠萝很高兴为您服务\",\"jvale\":\"{\\\"FONT_COLOR\\\":0,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":10,\\\"SAFE_URLFLAGS\\\":{}}\"},{\"type\":1,\"value\":\"pic:imemotion|ID?filepath=C%3A%5CProgram%20Files%20(x86)%5CAliWorkbench%5C7.02.06N%5CIMSDKResource%5Cemotions%5C84.gif&shortcut=%2F%3A-F\",\"jvale\":\"{\\\"FONT_COLOR\\\":0,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":10,\\\"SAFE_URLFLAGS\\\":{}}\"}]",
+      "msgid": "5980881929095215228",
+      "msgstatus": 1,
+      "msgtime": "1550658373267",
+      "msgtype": 13,
+      "readflag": 1,
+      "svrtime": "1550658373267",
+      "toid": {
+        "appkey": "cntaobao",
+        "display": "森林迷了小鹿1314",
+        "nick": "森林迷了小鹿1314",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      }
+    },
+    {
+      "cid": {
+        "appkey": "cntaobao",
+        "display": "森林迷了小鹿1314",
+        "nick": "森林迷了小鹿1314",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "extinfo": {
+        "autochatmsg": 1,
+        "fixmsgread": 0,
+        "others": {
+          "card_code": "entry_into_store",
+          "card_source": "2",
+          "disable_version_controller": "true",
+          "last_recent": "0",
+          "msg_feature": "59",
+          "nickname": "{\"user\":{\"cntaobaosemk旗舰店:波罗\":\"semk旗舰店:波罗\",\"cntaobao森林迷了小鹿1314\":\"森林迷了小鹿1314\"},\"tribe\":{}}",
+          "partner_bizid": "entry_into_store",
+          "realFromId": "cntaobao森林迷了小鹿1314",
+          "realToId": "cntaobaosemk旗舰店:波罗",
+          "show_type": "0",
+          "silent": "1",
+          "unknown_msg": "{\"behavior\":\"DEGRADE_DISP\",\"degradeMessage\":\"\"}"
+        },
+        "syschatmsg": 0
+      },
+      "fromid": {
+        "appkey": "cntaobao",
+        "display": "森林迷了小鹿1314",
+        "nick": "森林迷了小鹿1314",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "msgbody": "[{\"type\":65,\"value\":\"{\\\"header\\\":{\\\"degrade\\\":{\\\"alternative\\\":\\\"目前版本不支持该功能，请升级版本\\\"},\\\"summary\\\":\\\"进店卡片\\\",\\\"title\\\":\\\"进店卡片\\\"},\\\"template\\\":{\\\"data\\\":{\\\"body\\\":{\\\"bc\\\":\\\"#FFFFFF\\\",\\\"cs\\\":\\\"box\\\",\\\"ds\\\":\\\"fix\\\",\\\"f\\\":[0,0,12,4.7489999999999997],\\\"sv\\\":[{\\\"cs\\\":\\\"img\\\",\\\"f\\\":[0,0,12,4.7489999999999997],\\\"rds\\\":0.13,\\\"url\\\":\\\"https://gw.alicdn.com/tps/TB17Sm8PXXXXXcNXpXXXXXXXXXX-564-789.png\\\"},{\\\"ac\\\":[\\\"https://item.taobao.com/item.htm?id=523774561837&scm=20140619.rec.677812813.523774561837\\\"],\\\"bc\\\":\\\"#ffffff\\\",\\\"cs\\\":\\\"box\\\",\\\"ds\\\":\\\"flex\\\",\\\"f\\\":[0,0,12,4.6820000000000004],\\\"fd\\\":\\\"column\\\",\\\"rds\\\":0.13,\\\"sv\\\":[{\\\"cs\\\":\\\"lbl\\\",\\\"f\\\":[0.48599999999999999,0,11,1.4910000000000001],\\\"mts\\\":\\\"m\\\",\\\"tc\\\":\\\"#666666\\\",\\\"text\\\":\\\"当前用户来自 淘宝移动端 宝贝详情页 \\\",\\\"tfs\\\":0.48599999999999999},{\\\"cs\\\":\\\"line\\\",\\\"lc\\\":\\\"#ebebeb\\\",\\\"ls\\\":\\\"stock\\\",\\\"v\\\":[[0,0],[12,0]]},{\\\"cs\\\":\\\"box\\\",\\\"ds\\\":\\\"fix\\\",\\\"f\\\":[0.58999999999999997,0.52000000000000002,10.92,2.6709999999999998],\\\"sv\\\":[{\\\"cs\\\":\\\"img\\\",\\\"f\\\":[0,0,2.081,2.081],\\\"ir\\\":\\\"al\\\",\\\"rds\\\":0.13,\\\"url\\\":\\\"https://img.alicdn.com/bao/uploaded/i4/677812813/O1CN01RMbwY21WeOd8BrW9Z_!!677812813.jpg\\\"},{\\\"bc\\\":\\\"#00FFFFFF\\\",\\\"cs\\\":\\\"box\\\",\\\"ds\\\":\\\"flex\\\",\\\"f\\\":[2.4620000000000002,0,8.4499999999999993,2.081],\\\"sv\\\":[{\\\"cs\\\":\\\"lbl\\\",\\\"f\\\":[0,0,8.4499999999999993,\\\"FIT\\\"],\\\"mts\\\":\\\"m\\\",\\\"tc\\\":\\\"#333333\\\",\\\"text\\\":\\\"香港潮牌B.Duck小黄鸭马戏团双肩包 时尚潮流印花男女pu背包\\\",\\\"tfs\\\":0.48599999999999999},{\\\"cs\\\":\\\"lbl\\\",\\\"f\\\":[0,0,8.2460000000000004,1.1499999999999999],\\\"mts\\\":\\\"m\\\",\\\"tc\\\":\\\"#666666\\\",\\\"text\\\":\\\"合计￥198.00\\\",\\\"tfs\\\":0.48599999999999999}]}]}]}]},\\\"layout\\\":\\\"center\\\"},\\\"id\\\":20014}}\",\"jvale\":\"\"}]",
+      "msgid": "5980881929095165986",
+      "msgstatus": 0,
+      "msgtime": "1550658373278",
+      "msgtype": 65536,
+      "readflag": 1,
+      "svrtime": "1550658373278",
+      "toid": {
+        "appkey": "cntaobao",
+        "display": "semk旗舰店:波罗",
+        "nick": "semk旗舰店:波罗",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      }
+    },
+    {
+      "cid": {
+        "appkey": "cntaobao",
+        "display": "森林迷了小鹿1314",
+        "nick": "森林迷了小鹿1314",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "extinfo": {
+        "autochatmsg": 1,
+        "fixmsgread": 0,
+        "others": {
+          "gws_msg_content_type": "0",
+          "msg_feature": "3",
+          "nickname": "{\"user\":{\"cntaobaosemk旗舰店:花艺\":\"semk旗舰店:花艺\",\"cntaobao森林迷了小鹿1314\":\"森林迷了小鹿1314\"},\"tribe\":{}}"
+        },
+        "syschatmsg": 0
+      },
+      "fromid": {
+        "appkey": "cntaobao",
+        "display": "semk旗舰店:花艺",
+        "nick": "semk旗舰店:花艺",
+        "portrait": "pic:impicture|?filepath=D%3A%5CAliWorkbenchData%5CSystem%5Ccust_portrait_new%5Cf4%5Ccntaobaosemk%E6%97%97%E8%88%B0%E5%BA%97%3D%E8%8A%B1%E8%89%BA_raw",
+        "status": -1,
+        "unreadnum": 0
+      },
+      "msgbody": "[{\"type\":0,\"value\":\"亲亲地址确认一下哦\\n姓名: 张先生\\n电话: 13750287251\\n省市: 广东省 河源市 龙川县 老隆镇\\n详细地址: 老隆镇建设大道龙川火车站龙工单身宿舍\\u0004\\b\\u0004 \\u0006\\u0005\\u0004\\u0005\\u0006 \\u0004\\u0005\\u0002\",\"jvale\":\"{\\\"FONT_COLOR\\\":0,\\\"FONT_FAMILY\\\":\\\"微软雅黑\\\",\\\"FONT_SIZE\\\":10,\\\"FONT_UNDERLINE_STYLE\\\":1}\"}]",
+      "msgid": "6269472007306015140",
+      "msgstatus": 1,
+      "msgtime": "1550658373914",
+      "msgtype": 0,
+      "readflag": 0,
+      "svrtime": "1550658373914",
+      "toid": {
+        "appkey": "cntaobao",
+        "display": "森林迷了小鹿1314",
+        "nick": "森林迷了小鹿1314",
+        "portrait": "pic:impicture|?filepath=resdb%3A%2F%2F0%2Ftrader%5Ccontactlist%5Cdefportrait_raw",
+        "status": -1,
+        "unreadnum": 0
+      }
+    }
+  ]
+}
