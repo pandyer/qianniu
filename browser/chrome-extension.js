@@ -1,15 +1,18 @@
-const {app, ipcMain, webContents, BrowserWindow} = require('electron')
-const {getAllWebContents} = process.atomBinding('web_contents')
+const { 
+app, ipcMain, webContents, BrowserWindow 
+} = require('electron')
+
+const { getAllWebContents } = process.atomBinding('web_contents')
 const renderProcessPreferences = process.atomBinding('render_process_preferences').forAllWebContents()
 
-const {Buffer} = require('buffer')
+const { Buffer } = require('buffer')
 const fs = require('fs')
 const path = require('path')
 const url = require('url')
 
 // Mapping between extensionId(hostname) and manifest.
-const manifestMap = {}  // extensionId => manifest
-const manifestNameMap = {}  // name => manifest
+const manifestMap = {} // extensionId => manifest
+const manifestNameMap = {} // name => manifest
 const devToolsExtensionNames = new Set()
 
 const generateExtensionIdFromName = function (name) {
@@ -58,7 +61,7 @@ const getManifestFromPath = function (srcDirectory) {
       })
     })
     return manifest
-  } else if (manifest && manifest.name) {
+  } if (manifest && manifest.name) {
     console.warn(`Attempted to load extension "${manifest.name}" that has already been loaded.`)
     return manifest
   }
@@ -77,23 +80,21 @@ const startBackgroundPages = function (manifest) {
     html = fs.readFileSync(path.join(manifest.srcDirectory, manifest.background.page))
   } else {
     name = '_generated_background_page.html'
-    const scripts = manifest.background.scripts.map((name) => {
-      return `<script src="${name}"></script>`
-    }).join('')
+    const scripts = manifest.background.scripts.map((name) => `<script src="${name}"></script>`).join('')
     html = Buffer.from(`<html><body>${scripts}</body></html>`)
   }
 
   const contents = webContents.create({
     partition: 'persist:__chrome_extension',
     isBackgroundPage: true,
-    commandLineSwitches: ['--background-page']
+    commandLineSwitches: ['--background-page'],
   })
-  backgroundPages[manifest.extensionId] = { html: html, webContents: contents, name: name }
+  backgroundPages[manifest.extensionId] = { html, webContents: contents, name }
   contents.loadURL(url.format({
     protocol: 'chrome-extension',
     slashes: true,
     hostname: manifest.extensionId,
-    pathname: name
+    pathname: name,
   }))
 }
 
@@ -121,9 +122,9 @@ const hookWebContentsEvents = function (webContents) {
       frameId: 0,
       parentFrameId: -1,
       processId: webContents.getProcessId(),
-      tabId: tabId,
+      tabId,
       timeStamp: Date.now(),
-      url: url
+      url,
     })
   })
 
@@ -132,9 +133,9 @@ const hookWebContentsEvents = function (webContents) {
       frameId: 0,
       parentFrameId: -1,
       processId: webContents.getProcessId(),
-      tabId: tabId,
+      tabId,
       timeStamp: Date.now(),
-      url: url
+      url,
     })
   })
 
@@ -146,7 +147,7 @@ const hookWebContentsEvents = function (webContents) {
 // Handle the chrome.* API messages.
 let nextId = 0
 
-ipcMain.on('CHROME_RUNTIME_CONNECT', function (event, extensionId, connectInfo) {
+ipcMain.on('CHROME_RUNTIME_CONNECT', (event, extensionId, connectInfo) => {
   const page = backgroundPages[extensionId]
   if (!page) {
     console.error(`Connect to unknown extension ${extensionId}`)
@@ -163,12 +164,12 @@ ipcMain.on('CHROME_RUNTIME_CONNECT', function (event, extensionId, connectInfo) 
   page.webContents.sendToAll(`CHROME_RUNTIME_ONCONNECT_${extensionId}`, event.sender.id, portId, connectInfo)
 })
 
-ipcMain.on('CHROME_I18N_MANIFEST', function (event, extensionId) {
+ipcMain.on('CHROME_I18N_MANIFEST', (event, extensionId) => {
   event.returnValue = manifestMap[extensionId]
 })
 
 let resultID = 1
-ipcMain.on('CHROME_RUNTIME_SENDMESSAGE', function (event, extensionId, message, originResultID) {
+ipcMain.on('CHROME_RUNTIME_SENDMESSAGE', (event, extensionId, message, originResultID) => {
   const page = backgroundPages[extensionId]
   if (!page) {
     console.error(`Connect to unknown extension ${extensionId}`)
@@ -182,7 +183,7 @@ ipcMain.on('CHROME_RUNTIME_SENDMESSAGE', function (event, extensionId, message, 
   resultID++
 })
 
-ipcMain.on('CHROME_TABS_SEND_MESSAGE', function (event, tabId, extensionId, isBackgroundPage, message, originResultID) {
+ipcMain.on('CHROME_TABS_SEND_MESSAGE', (event, tabId, extensionId, isBackgroundPage, message, originResultID) => {
   const contents = webContents.fromId(tabId)
   if (!contents) {
     console.error(`Sending message to unknown tab ${tabId}`)
@@ -198,7 +199,7 @@ ipcMain.on('CHROME_TABS_SEND_MESSAGE', function (event, tabId, extensionId, isBa
   resultID++
 })
 
-ipcMain.on('CHROME_TABS_EXECUTESCRIPT', function (event, requestId, tabId, extensionId, details) {
+ipcMain.on('CHROME_TABS_EXECUTESCRIPT', (event, requestId, tabId, extensionId, details) => {
   const contents = webContents.fromId(tabId)
   if (!contents) {
     console.error(`Sending message to unknown tab ${tabId}`)
@@ -227,7 +228,7 @@ const injectContentScripts = function (manifest) {
   const readArrayOfFiles = function (relativePath) {
     return {
       url: `chrome-extension://${manifest.extensionId}/${relativePath}`,
-      code: String(fs.readFileSync(path.join(manifest.srcDirectory, relativePath)))
+      code: String(fs.readFileSync(path.join(manifest.srcDirectory, relativePath))),
     }
   }
 
@@ -236,14 +237,14 @@ const injectContentScripts = function (manifest) {
       matches: script.matches,
       js: script.js ? script.js.map(readArrayOfFiles) : [],
       css: script.css ? script.css.map(readArrayOfFiles) : [],
-      runAt: script.run_at || 'document_idle'
+      runAt: script.run_at || 'document_idle',
     }
   }
 
   try {
     const entry = {
       extensionId: manifest.extensionId,
-      contentScripts: manifest.content_scripts.map(contentScriptToEntry)
+      contentScripts: manifest.content_scripts.map(contentScriptToEntry),
     }
     contentScripts[manifest.name] = renderProcessPreferences.addEntry(entry)
   } catch (e) {
@@ -265,7 +266,7 @@ const manifestToExtensionInfo = function (manifest) {
     startPage: manifest.startPage,
     srcDirectory: manifest.srcDirectory,
     name: manifest.name,
-    exposeExperimentalAPIs: true
+    exposeExperimentalAPIs: true,
   }
 }
 
@@ -287,7 +288,7 @@ const loadDevToolsExtensions = function (win, manifests) {
   win.devToolsWebContents.executeJavaScript(`DevToolsAPI.addExtensions(${JSON.stringify(extensionInfoArray)})`)
 }
 
-app.on('web-contents-created', function (event, webContents) {
+app.on('web-contents-created', (event, webContents) => {
   if (!isWindowOrWebView(webContents)) return
 
   hookWebContentsEvents(webContents)
@@ -310,11 +311,11 @@ const chromeExtensionHandler = function (request, callback) {
     // eslint-disable-next-line standard/no-callback-literal
     return callback({
       mimeType: 'text/html',
-      data: page.html
+      data: page.html,
     })
   }
 
-  fs.readFile(path.join(manifest.srcDirectory, parsed.path), function (err, content) {
+  fs.readFile(path.join(manifest.srcDirectory, parsed.path), (err, content) => {
     if (err) {
       // Disabled due to false positive in StandardJS
       // eslint-disable-next-line standard/no-callback-literal
@@ -325,7 +326,7 @@ const chromeExtensionHandler = function (request, callback) {
   })
 }
 
-app.on('session-created', function (ses) {
+app.on('session-created', (ses) => {
   ses.protocol.registerBufferProtocol('chrome-extension', chromeExtensionHandler, function (error) {
     if (error) {
       console.error(`Unable to register chrome-extension protocol: ${error}`)
@@ -336,7 +337,7 @@ app.on('session-created', function (ses) {
 // The persistent path of "DevTools Extensions" preference file.
 let loadedDevToolsExtensionsPath = null
 
-app.on('will-quit', function () {
+app.on('will-quit', () => {
   try {
     const loadedDevToolsExtensions = Array.from(devToolsExtensionNames)
       .map(name => manifestNameMap[name].srcDirectory)
@@ -356,7 +357,7 @@ app.on('will-quit', function () {
 })
 
 // We can not use protocol or BrowserWindow until app is ready.
-app.once('ready', function () {
+app.once('ready', () => {
   // The public API to add/remove extensions.
   BrowserWindow.addExtension = function (srcDirectory) {
     const manifest = getManifestFromPath(srcDirectory)

@@ -1,10 +1,25 @@
 const net = require('net');
-const { EventEmitter } = require('events');
-const { logger } = require('winston');
-const utils = require('./utils');
+const EventEmitter = require('events');
+const { logger } = require('../logger.es6');
 
 const server = new net.Server();
 const MESSAGE_DELIMITER = '\r\n\r\n';
+
+const utils = {
+  sleep: (n, tip) => {
+    logger.info(`${tip} going to sleep for [${n}]s`);
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        logger.info(`${tip} wake up after [${n}]s`);
+        resolve();
+      }, n * 1000);
+    })
+  },
+  base64: {
+    decode: (data) => Buffer.from(data, 'base64').toString('UTF8'),
+    encode: (data) => Buffer.from(data).toString('base64'),
+  },
+};
 
 class Assistant extends EventEmitter {
   constructor(manager, socket) {
@@ -73,6 +88,7 @@ class Assistant extends EventEmitter {
     }
   }
 
+  // eslint-disable-next-line consistent-return
   onResult(data) {
     if (this.queue.length === 0) {
       logger.error(`got unknown result: ${JSON.stringify(data)}`);
@@ -90,6 +106,7 @@ class Assistant extends EventEmitter {
     }
   }
 
+  // eslint-disable-next-line consistent-return
   onEvent(data) {
     if (this.nick === null) {
       logger.warn('droping unidentified event data');
@@ -212,6 +229,86 @@ export default class IPCNative extends EventEmitter {
       } catch (e) {
         logger.error('connection failed');
       }
+      return false;
+    });
+
+    server.on('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        logger.error('server port in-use, shutting down');
+        server.close();
+      }
     })
+
+    return new Promise((resolve) => {
+      server.listen({
+        port,
+        host: '127.0.0.1',
+      }, () => {
+        logger.info(`native ipc on ${port}`);
+        this.started = true;
+        resolve();
+      })
+    })
+  }
+
+  async invoke(clients, method, params = null) {
+    const { nick } = clients[0];
+    const requests = clients.map(client => client.invoke(method, params));
+    let succeeded = false;
+    const response = await Promise.race(requests);
+    succeeded = response.result === 'success';
+    if (succeeded) {
+      return {
+        succeeded,
+        message: `${method} to ${nick} succeeded`,
+      }
+    }
+    return {
+      succeeded,
+      message: `${method} to ${nick} failed`,
+      error: response,
+    }
+  }
+
+  async sendSentences(assistantID, buyerNick, sentences, interval = 0.1) {
+    const clients = this.getClients(assistantID);
+    const nick = utils.base64.decode(assistantID);
+    if (clients.length === 0) {
+      return {
+        succeeded: false,
+        message: `assistant[${nick}] not found`,
+      }
+    }
+    let succeeded = true;
+    for (const sentence of sentences) {
+      let method = null;
+      const params = {
+        id: buyerNick,
+      }
+      if (sentence.type === 'text') {
+        method = 'sendtext';
+        params.text = sentence.text;
+        break;
+      }
+      if (sentence.type === 'image') {
+        method = 'sendimage';
+        params.image = sentence.image;
+        break;
+      }
+      try {
+        const resp = await this.invoke(clients, method, params);
+        await utils.sleep(interval, 'sleeping between sentences');
+        sentence.succeeded = true;
+        logger.info(`${resp.message}`);
+      } catch (e) {
+        succeeded = false;
+        logger.error(`send failed ${JSON.stringify(e)}`);
+      }
+    }
+
+    return {
+      succeeded,
+      sentences,
+    }
   }
 }

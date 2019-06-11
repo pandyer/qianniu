@@ -2,8 +2,8 @@ const { app } = require('electron');
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
-const { logger } = require('../logger');
-const { ADP, findAllQNs, findLocalPorts } = require('./adp');
+const { logger } = require('../logger.es6');
+const { ADP, findAllQNs, findLocalPorts } = require('./adp.es6');
 
 const session = axios.create({
   timeout: 1000,
@@ -22,8 +22,7 @@ class Downloader {
   }
 
   download(resourceID) {
-    const { resourceDir } = this;
-    const sessionC = this.session;
+    const { resourceDir, session: sessionC } = this;
     const normalizedID = path.basename(resourceID);
     const dstPath = path.join(resourceDir, normalizedID);
 
@@ -126,15 +125,30 @@ export const injectServerInfo = async (qnPort, target, name, serverPort) => {
   logger.info(`${label}: Succeeded`);
 }
 
+export const sleep = (nSeconds) => new Promise((resolve) => {
+  setTimeout(() => {
+    resolve();
+  })
+}, nSeconds * 1000);
+
 export const injectScript = async (qnPort, target, scriptName) => {
   const label = `Injecting Script [${scriptName} on ${qnPort}]`;
-  const expression = loadScript(scriptName);
+  const expression = loadScript(scriptName); // 对应的js的内容
   let errMsg = 'ok';
 
   logger.info(`${label}: Start`);
 
-  const client = new ADP(qnPort, 'page', target.targetId);
+  const client = new ADP(qnPort, 'page', target.targetId); // 建立了一个websocket连接
+  // this.qnPort 'page' 'chat.local'
   client.connect();
+  /**
+   * 发送信息，参数为
+   * JSON.stringify({
+   *  method: 'Runtime.evaluate',
+   *  params: expression,
+   *  id: xx,
+   * })
+   *   */
   const resp = await client.send(label, 'Runtime.evaluate', { expression });
   client.close();
 
@@ -207,7 +221,7 @@ export const getPort = async () => {
   const tabs = Promise.all(allQNs.filter(qn => !filetQNPorts.includes(qn.port)).map(listTabsWithQN));
   const valid = tabs.filter(tab => tab !== null);
   logger.debug(`valid ports: ${JSON.stringify(valid)}`);
-  if (!valid.length) {
+  if (valid.length) {
     return valid[0];
   }
   return null;

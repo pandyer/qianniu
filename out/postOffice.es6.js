@@ -1,18 +1,18 @@
-const events = require('events');
+const EventEmitter = require('events');
 const uuid = require('uuid');
-const ws = require('ws');
-const { logger } = require('./logger');
+const WS = require('ws');
+const { logger } = require('./logger.es6');
 
 const ALIVE_S = 60 * 1000; // 1分钟
 const CHECK_S = 10 * 1000; // 10秒
 const SERVICE_MODES = {
   NORMAL: 'normal',
   NIGHTWATCH: 'nightwatch',
-  DISPATCH: 'transfer'
+  DISPATCH: 'transfer',
 };
 
 function sleep(nSeconds) {
-  return new Promise((resolve, reject) => {
+  return new Promise(() => {
     logger.verbose(`sleeping for [${nSeconds}]s`);
     setTimeout(() => {
       logger.verbose(`slept for [${nSeconds}]s`)
@@ -20,10 +20,11 @@ function sleep(nSeconds) {
   })
 }
 
-export default class Postoffice extends events {
+export default class Postoffice extends EventEmitter {
   constructor(useSameConnectionID = false) {
+    super();
     this.ws = null;
-    this.alive = null;    
+    this.alive = null;
     this.checkID = null;
     this.idCounter = 0;
     this.queryCounter = {};
@@ -31,53 +32,59 @@ export default class Postoffice extends events {
     this.useSameConnectionID = useSameConnectionID || false;
     this.connectionID = uuid.v4();
     this.authToken = null;
-    this._closing = null;
+    this.closing = null;
     this.serviceMode = SERVICE_MODES.NORMAL;
     this.requestPool = {};
     this.connectInfo = {};
     this.started = false;
   }
+
   switchToDispatch() { // 派发模式
     this.serviceMode = SERVICE_MODES.DISPATCH;
   }
+
   switchToNightwatch() { // 夜间观察
     this.serviceMode = SERVICE_MODES.NIGHTWATCH;
   }
+
   switchToNormal() { // 正常模式
     this.serviceMode = SERVICE_MODES.NORMAL;
   }
+
   tearDown() { // 销毁
-    if(this.ws === null || this.ws.readyState !== ws.OPEN) {
+    if (this.ws === null || this.ws.readyState !== WS.OPEN) {
       this.ws = null;
       return Promise.resolve();
     }
-    return new Promise((resolve, reject) => {
-      this._closing = resolve;
+    return new Promise((resolve) => {
+      this.closing = resolve;
       this.ws.close();
     })
   }
+
   async reconnect(retryInterval = 5) { // 5秒钟后重连
     try {
-      if(!this.authToken) {
+      if (this.authToken === null) {
         await sleep(retryInterval);
       }
       logger.info('setting up');
       await this.setup();
-    } catch(e) {
+    } catch (e) {
       logger.error(`reconnect failed, retry after${retryInterval}s`)
     }
   }
+
   checkAlive() {
     logger.verbose('checking alive flag...')
-    if(this.alive === null) {
+    if (this.alive === null) {
       logger.verbose('alive flag is null');
       return;
-    } else if (new Date() - this.alive < ALIVE_S) {
+    } if (new Date() - this.alive < ALIVE_S) {
       logger.verbose(`last ping: ${this.alive}`);
       return;
     }
 
-    if(this.checkID) {
+    if (this.checkID) {
       clearInterval(this.checkID);
     }
 
@@ -89,43 +96,44 @@ export default class Postoffice extends events {
     this.emit('postoffice-unexpected-close');
     this.reconnect();
   }
+
   setup(_url, _authenticationToken) {
-    let { connectInfo } = this;
-    let { url, authenticationToken } = connectInfo;
-    connectInfo = {
+    const { url, authenticationToken } = this.connectInfo;
+    this.connectInfo = {
       url: url || _url,
-      authenticationToken: authenticationToken || _authenticationToken
+      authenticationToken: authenticationToken || _authenticationToken,
     }
-    return this.connect(url).then(() => this.authorize(authentication)).then(() => {
+    return this.connect(url).then(() => this.authorize(authenticationToken)).then(() => {
       logger.info('setting up ping check');
 
       this.checkID = setInterval(() => this.checkAlive(), CHECK_S);
     })
   }
+
   connect(url) { // 连接websocket
     logger.verbose(`prepare to connect ["${url}"]`)
-    if(!this.useSameConnectionID) {
+    if (!this.useSameConnectionID) {
       this.connectionID = uuid.v4();
     }
     return this.tearDown().then(() => {
       logger.verbose(`connecting to ${url}`);
-      this._closing = null;
-      return new Promise((resolve, reject) => {
-        const ws = new ws(url, {
+      this.closing = null;
+      return new Promise((resolve) => {
+        const ws = new WS(url, {
           headers: {
-            'X-Connection-ID': this.connectionID
-          }
+            'X-Connection-ID': this.connectionID,
+          },
         });
-        ws.on('ping', (event) => {
+        ws.on('ping', () => {
           if (this.checkID === null) return;
-          logger.verbose("ping received, i'm alive");
+          logger.verbose('ping received, i\'m alive');
           this.alive = new Date();
         })
         ws.on('error', (event) => {
           logger.error(`[${event}](${this.connectInfo.url})`);
 
           this.authToken = null;
-          this._closing = true;
+          this.closing = true;
 
           this.emit('postoffice-unexpected-close');
 
@@ -135,9 +143,9 @@ export default class Postoffice extends events {
             throw new Error(event);
           }
         })
-        ws.on('close', (event) => {
+        ws.on('close', () => {
           this.authToken = null;
-          if (this._closing === null) {
+          if (this.closing === null) {
             logger.error('unexpected closing');
             this.emit('postoffice-unexpected-close');
 
@@ -146,13 +154,13 @@ export default class Postoffice extends events {
             this.emit('postoffice-closed');
 
             try {
-              this._closing();
-            } catch(e) {
+              this.closing();
+            } catch (e) {
               logger.error('closing failed');
             }
           }
         });
-        ws.on('open', (event) => {
+        ws.on('open', () => {
           this.started = true;
           this.alive = new Date();
           resolve(ws);
@@ -167,34 +175,38 @@ export default class Postoffice extends events {
 
         try {
           message = JSON.parse(data);
-        } catch(e) {
+        } catch (e) {
           logger.error('invalid json-prc', data);
 
           message = {};
         }
 
-        if (message.fn !== undefined && typeof(message.fn) === 'object') {
+        if (message.fn !== undefined && typeof (message.fn) === 'object') {
           logger.info(`server request received: ${message.fn}`)
 
-          this.emit(message.fn, ...({
-            serviceMode: this.serviceMode
-          }, message.args, {
-            id: message.id,
-            ws
-          }));
-        } else if (message.id) {
-          const request = this.request[message.id];
+          this.emit(message.fn, ...(
+            {
+              serviceMode: this.serviceMode,
+            },
+            message.args,
+            {
+              id: message.id,
+              ws,
+            }
+          ));
+        } else if (message.id !== undefined) {
+          const request = this.requestPool[message.id];
 
-          if (!request) {
+          if (request === undefined) {
             logger.warn(`unknown response for [${message.id}]`)
             return;
           }
 
           logger.profile(request.reqID);
 
-          if (message.result) {
+          if (message.result !== undefined) {
             request.resolve(message.result);
-          } else if (message.error) {
+          } else if (message.error !== undefined) {
             request.reject(message.error);
           } else {
             request.reject(`malformed json-rpc ${data}`);
@@ -205,6 +217,7 @@ export default class Postoffice extends events {
       })
     })
   }
+
   authorize(authenticationToken) {
     if (this.authToken) {
       logger.warn('already authorized');
@@ -214,20 +227,21 @@ export default class Postoffice extends events {
 
     return this.sendRequest('Agent.AuthenticateByToken', {
       AuthenticateByToken: authenticationToken,
-      ConnectionID: this.connectionID
-    }, true).then(({Token, Success}) => {
-      return new Promise((resolve, reject) => {
-        if (Success) {
-          this.authToken = Token;
-          logger.verbose('agent authorized');
-          resolve(Token);
-        } else {
-          reject('agent authorized failed');
-        }
-      })
-    })
+      ConnectionID: `${this.connectionID}`,
+    }, true).then(({ Token, Success }) => new Promise((resolve, reject) => {
+      if (Success) {
+        this.authToken = Token;
+        logger.verbose('agent authorized');
+        resolve(Token);
+      } else {
+        // eslint-disable-next-line prefer-promise-reject-errors
+        reject('agent authorized failed');
+      }
+    }))
   }
+
   sendRequest(method, param, forceSend = false) {
+    // eslint-disable-next-line no-plusplus
     const id = ++this.idCounter;
 
     const reqID = this._getReqID(id);
@@ -237,7 +251,7 @@ export default class Postoffice extends events {
     const data = {
       id: `${id}`,
       fn: method,
-      args: param
+      args: param,
     };
 
     logger.debug('sending', data);
@@ -247,16 +261,18 @@ export default class Postoffice extends events {
     return new Promise((resolve, reject) => {
       this.request[id] = {
         ts: new Date(),
-        id: id,
-        reqID: reqID,
-        data: data,
-        resolve: resolve,
-        reject: reject
+        id,
+        reqID,
+        data,
+        resolve,
+        reject,
       };
       return this._send(data, forceSend, reject);
     })
   }
-  _send(data, forceSend, reject) {
+
+  _send(d, forceSend, reject) {
+    const data = d;
     if (this.authToken === null && forceSend === false) {
       setTimeout(() => {
         logger.warn('client not authorized, try again in 1s')
@@ -283,15 +299,19 @@ export default class Postoffice extends events {
       reject(tip);
     }
   }
-  sendSignal((userID, signal) {
+
+  sendSignal(userID, signal) {
     return this.call('Dialogue.Question', userID, 'outgoing', '', signal);
   }
+
   question(userID, type, query, signal = '') {
     return this.call('Dialogue.Question', userID, type, query, signal);
   }
+
   mono(userID, type, query, signal = '') {
     return this.call('Dialogue.MonoTurn', userID, type, query, signal);
   }
+
   syncMessages(userID, messages, manualMode, timestamp, timeoffset) {
     return this.sendRequest('Dialogue.SyncMessages', {
       UserID: userID,
@@ -299,14 +319,25 @@ export default class Postoffice extends events {
       ServiceMode: this.serviceMode,
       ManualMode: manualMode,
       ClientTimestamp: timestamp,
-      ClientTimeOffset: timeoffset
+      ClientTimeOffset: timeoffset,
     });
   }
+
   call(method, UserID, Type, Query, Signal) {
     logger.info(`${method} for [${UserID}] [${Query}]`)
+    return this.sendRequest(method, {
+      ...this._getQueryID(UserID, Type === 'incoming'),
+      ...{
+        Query,
+        Type,
+        UserID,
+        Signal,
+      },
+    })
   }
+
   _getQueryID(userID, isQuestion) {
-    if(!this.queryCounter[userID]) {
+    if (this.queryCounter[userID] === undefined) {
       this.queryCounter[userID] = 0;
     }
     const info = {
@@ -314,11 +345,11 @@ export default class Postoffice extends events {
       QuestionID: 0,
       ServiceMode: this.serviceMode,
       SessionMode: 'auto',
-      Timestamp: Math.round(new Date().getTime() / 1000)
+      Timestamp: Math.round(new Date().getTime() / 1000),
     };
 
     if (isQuestion) {
-      if (!this.questionCounter[userID]) {
+      if (this.questionCounter[userID] === undefined) {
         this.questionCounter[userID] = 0;
       }
 
@@ -327,6 +358,7 @@ export default class Postoffice extends events {
 
     return info;
   }
+
   _getReqID(id) {
     return `Request#${id}`
   }

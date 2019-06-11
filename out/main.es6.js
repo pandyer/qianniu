@@ -1,7 +1,8 @@
-const {app, BrowserWindow, dialog} = require('electron');
+const { app, BrowserWindow, dialog } = require('electron');
+const devtron = require('devtron');
 const settings = require('./settings');
 const pimp = require('./pimp');
-const {logger} = require('./logger');
+const { logger } = require('./logger.es6');
 const updater = require('./updater');
 const QNHelper = require('./QNHelper');
 
@@ -15,7 +16,18 @@ app.on('quit', (event, exitCode) => {
   logger.warn(`EVENT: ${JSON.stringify(event)}, CODE: ${exitCode}`)
 })
 
+process.on('uncaughtException', (err) => {
+  logger.error('FILET OUT exception='.concat(err));
+});
+process.on('unhandledRejection', (reason) => {
+  logger.error('unhandled rejection reason='.concat(reason, '}'));
+});
+
+app.on('quit', (event, exitCode) => {
+  logger.warn('EVENT: '.concat(JSON.stringify(event), ' CODE: ').concat(exitCode, '}'));
+});
 app.on('window-all-closed', () => {
+  pimp.release();
   app.quit();
 })
 
@@ -29,14 +41,14 @@ app.on('ready', async () => {
     width: 300,
     height: 640,
     useContentSize: true,
-    resizable: false
+    resizable: false,
   });
   mainWindow.loadURL(`file://${__dirname}/ui/index.html#?launch`);
 
   if (settings.isDev) {
     mainWindow.openDevTools();
 
-    require('devtron').install();
+    devtron.install();
   }
 
   mainWindow.webContents.once('did-finish-load', async () => {
@@ -44,7 +56,7 @@ app.on('ready', async () => {
     mainWindow.focus();
     try {
       const errMsg = await pimp.launch(mainWindow);
-      
+
       if (errMsg !== null) {
         dialog.showErrorBox('限制登录', errMsg);
         app.emit('window-all-closed');
@@ -56,6 +68,6 @@ app.on('ready', async () => {
     }
   });
 
-  mainWindow.on('closed', () => mainWindow = null);
+  mainWindow.on('closed', () => { mainWindow = null });
   mainWindow.setMenu(null);
 })

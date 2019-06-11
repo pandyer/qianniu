@@ -1,3 +1,7 @@
 /node_modules/
+*.js
+/out/*.js
+!/out/*.es6.js
 /out/*/*.js
+/out/*/*/*.js
 !/out/*/*.es6.js

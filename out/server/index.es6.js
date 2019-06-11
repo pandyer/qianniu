@@ -4,9 +4,9 @@ const jsonwebtoken = require('jsonwebtoken');
 const http = require('http');
 const qnipc = require('qnipc');
 
-const { settings } = require('../settings.js');
-const utils = require('./utils');
-const { logger } = require('../logger');
+const { settings } = require('../settings.es6');
+const utils = require('./utils.es6');
+const { logger } = require('../logger.es6');
 
 function queryAuth(requiredFields) {
   return function authMiddleware(_socket, next) {
@@ -63,6 +63,33 @@ const chat = io.of('/chat').use(queryAuth(['assistantNick']));
 const wingman = io.of('/wingman').use(queryAuth(['assistantNick', 'authToken']));
 
 export default class QN {
+  constructor() {
+    this.ipcOnline = false;
+    this.ipcPort = null;
+    this.qnPort = null;
+    this.serverPort = null;
+    this.chatClient = null;
+    this.wingmanClient = null;
+    this.guarding = false;
+
+    this.authToken = null;
+    this.sid = null;
+    this.aid = null;
+    this.font = '\\T';
+  }
+
+  detail() {
+    return {
+      application: 'filet',
+      serverPort: this.serverPort,
+      qnPort: Number(this.qnPort),
+      chat: this.chatClient !== null,
+      wingmang: this.wingmanClient !== null,
+      ipc: this.ipcOnline,
+      ipcPort: utils.hpc.port,
+    }
+  }
+
   transferTo(nick, transferID) {
     const { aid } = this;
     return this.proxy('top', 'taobao.qianniu.cloudkefu.forward', {
@@ -94,7 +121,7 @@ export default class QN {
     });
   }
 
-  async sendSentences(nick, sentences) { // 发送一块内容
+  async sendSentences(nick, sentences) { // 发送语句
     const succeeded = await utils.hpc.sendSentences(this.aid, nick, sentences);
     return succeeded;
   }
@@ -259,7 +286,7 @@ export default class QN {
       logger.debug(`${_socket.id} connected`);
 
       const { assistantNick } = _socket.handshake.query;
-      const label = `chat (${assistantNick})`;
+      const label = `chat(${assistantNick})`;
 
       logger.info(`${label} joined`);
 
@@ -307,79 +334,79 @@ export default class QN {
         callback(operations);
         logger.info(`wingman knowledge: [${nick}] ${JSON.stringify(operations)})`);
       })
-    });
+      _socket.on('proxy', async ({ app, method, params }, callback = utils.noop('proxy')) => {
+        let tip = null;
+        if (app !== 'top') {
+          tip = `不支持此Namespace: app=${app}`;
 
-    _socket.on('proxy', async ({ app, method, params }, callback = utils.noop('proxy')) => {
-      let tip = null;
-      if (app !== 'top') {
-        tip = `不支持此Namespace: app=${app}`;
+          logger.warn(tip);
 
-        logger.warn(tip);
-
-        callback({
-          succeeded: false,
-          message: tip,
-        });
-        return;
-      }
-      const resp = await this.proxy(app, method, params);
-      callback(resp);
-    });
-
-    _socket.on('customer.next', async ({ last }, callback = utils.noop('customer.next')) => {
-      let tip = null;
-
-      if (last !== 'bot') {
-        tip = `不支持此过滤选项: last=${last}`;
-
-        logger.warn(tip);
-
-        callback({
-          succeeded: false,
-          message: tip,
-        });
-
-        return;
-      }
-
-      const { customer, capacity } = customerService.getNext();
-
-      if (capacity === 0) {
-        callback({
-          succeeded: false,
-          remain: 0,
-          message: '没有更多符合条件的客户',
-        });
-        return;
-      }
-
-      const res = await this.openChat('cntaobao', customer.nick);
-
-      if (res.succeeded) {
-        customer.visited = true;
-      }
-      callback({
-        ...res,
-        ...{
-          nick: customer.nick,
-          remain: capacity - 1,
-        },
+          callback({
+            succeeded: false,
+            message: tip,
+          });
+          return;
+        }
+        const resp = await this.proxy(app, method, params);
+        callback(resp);
       });
+
+      _socket.on('customer.next', async ({ last }, callback = utils.noop('customer.next')) => {
+        let tip = null;
+
+        if (last !== 'bot') {
+          tip = `不支持此过滤选项: last=${last}`;
+
+          logger.warn(tip);
+
+          callback({
+            succeeded: false,
+            message: tip,
+          });
+
+          return;
+        }
+
+        const { customer, capacity } = customerService.getNext();
+
+        if (capacity === 0) {
+          callback({
+            succeeded: false,
+            remain: 0,
+            message: '没有更多符合条件的客户',
+          });
+          return;
+        }
+
+        const res = await this.openChat('cntaobao', customer.nick);
+
+        if (res.succeeded) {
+          customer.visited = true;
+        }
+        callback({
+          ...res,
+          ...{
+            nick: customer.nick,
+            remain: capacity - 1,
+          },
+        });
+      });
+
+      _socket.emit('font-config', prefix => { this.font = prefix });
+
+      _socket.on('dispatchMode:set', ({ dispatchMode }, callback = utils.noop('dispatchMode:set')) => {
+        callback({
+          dispatchMode: postman.setDispatchMode(dispatchMode),
+        });
+      });
+
+      _socket.on('dispatchMode:get', (callback = utils.noop('dispatchMode:get')) => {
+        callback({
+          dispatchMode: postman.getDispatchMode(),
+        });
+      })
     });
 
-    socket.emit('font-config', prefix => this.font = prefix);
-
-    socket.on('dispatchMode:set', ({ dispatchMode }, callback = utils.noop('dispatchMode:set')) => {
-      callback({
-        dispatchMode: postman.setDispatchMode(dispatchMode),
-      });
-    });
-
-    socket.on('dispatchMode:get', (callback = utils.noop('dispatchMode:get')) => {
-      callback({
-        dispatchMode: postman.getDispatchMode(),
-      });
-    })
 
     qnipc.app.use('/filet', (req, res) => {
       res.json(this.detail());
@@ -387,22 +414,21 @@ export default class QN {
 
     return new Promise((resolve) => {
       server.listen(0, '127.0.0.1').on('listening', async () => {
+        const tcpPort = 9996;
+        const { port } = server.address();
+        this.serverPort = port;
+
+        logger.info(`starting listening on [${port}]`)
+
+        const inUse = await tcpPortUsed.check(tcpPort, '127.0.0.1');
         try {
-          const tcpPort = 9996;
-          const { port } = server.address();
-          this.serverPort = port;
-
-          logger.info(`starting listening on [${port}]`)
-
-          const inUse = await tcpPortUsed.check(tcpPort, '127.0.0.1');
-          return qnipc.ipcNative.start(tcpPort);
+          if (inUse) qnipc.ipcNative.start(tcpPort);
         } catch (e) {
           logger.error(`UNK ERROR: ${JSON.stringify(e)}`);
-
-          this.ipcOnline = true;
-          logger.warn('ipc already started');
-          resolve(port);
         }
+        this.ipcOnline = true;
+        logger.warn('ipc already started');
+        resolve(port);
       })
     })
   }
@@ -412,7 +438,7 @@ export default class QN {
     let chatTab;
     let wingmanTab;
     tabInfo = await utils.getPort();
-    if (tabInfo === null) {
+    if (tabInfo !== null) {
       logger.debug('finding available ports...');
       return utils.sleep(0.5);
     }
@@ -445,40 +471,6 @@ export default class QN {
     if (this.wingmanClient !== null && this.chatClient !== null) {
       return utils.sleep(0.5);
     }
+    return null;
   }
-
-  static detail() {
-    return {
-      application: 'filet',
-      serverPort: _this.serverPort,
-      qnPort: Number(_this.qnPort),
-      chat: _this.chatClient !== null,
-      wingmang: _this.wingmanClient !== null,
-      ipc: _this.ipcOnline,
-      ipcPort: _utils.hpc.port,
-    };
-  }
-
-  static ipcOnline = false;
-
-  static ipcPort = null;
-
-  static qnPort = null;
-
-  static serverPort = null;
-
-  static chatClient = null;
-
-  static wingmanClient = null;
-
-  static guarding = false;
-  /** TMP HACK */
-
-  static authToken = null;
-
-  static sid = null;
-
-  static aid = null;
-
-  static font = '\\T';
 }

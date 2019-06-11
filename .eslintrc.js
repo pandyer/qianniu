@@ -17,6 +17,8 @@ module.exports = {
       "max-len": 0,
       "arrow-parens": 0,
       "class-methods-use-this": 0,
-      "no-restricted-syntax": 0
+      "no-restricted-syntax": 0,
+      "no-underscore-dangle": 0,
+      "no-plusplus": 0
   }
 }
